@@ -57,9 +57,9 @@ function toggleSort() {
 async function loadTransactions() {
 
     const response = await fetch("./data/transactions.json");
-    const transactions = await response.json();
-    //transactionsData = await response.json();
-    //renderTransactions();
+    //const transactions = await response.json();
+    transactionsData = await response.json();
+
 
     const euro = n => new Intl.NumberFormat(
         "de-DE",
@@ -69,7 +69,7 @@ async function loadTransactions() {
         }
     ).format(n);
 
-    const balance = transactions.reduce((sum, item) => {
+    const balance = transactionsData.reduce((sum, item) => {
         return sum + (
             item.type === "in"
             ? item.amount
@@ -84,7 +84,7 @@ async function loadTransactions() {
         document.getElementById("transactions");
 
     container.innerHTML =
-        transactions
+        transactionsData
         .sort((a,b)=>new Date(b.date)-new Date(a.date))
         .map(t => `
             <article class="transaction ${t.type}">

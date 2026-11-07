@@ -20,91 +20,26 @@ body {
             180deg,
             #64c6ff 0%,
             #9fe2ff 40%,
-            #e9f7ff 70%,
-            #fff4cc 100%
+            #dff5ff 75%,
+            #fff7d6 100%
         );
 
     overflow-x: hidden;
     position: relative;
 }
 
-/* Sonne */
-
-body::before {
-    content: "";
-
-    position: fixed;
-    top: 60px;
-    right: 8%;
-
-    width: 180px;
-    height: 180px;
-
-    border-radius: 50%;
-
-    background: #ffd84f;
-
-    box-shadow:
-        0 0 40px rgba(255,220,98,.7),
-        0 0 90px rgba(255,220,98,.5),
-        0 0 150px rgba(255,220,98,.3);
-
-    z-index: -1;
-}
-
-/* Wiese */
-
-body::after {
-    content: "";
-
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 35vh;
-
-    background:
-        radial-gradient(
-            ellipse at 10% 120%,
-            #6fc35b 0 40%,
-            transparent 41%
-        ),
-        radial-gradient(
-            ellipse at 40% 120%,
-            #83cf6c 0 50%,
-            transparent 51%
-        ),
-        radial-gradient(
-            ellipse at 70% 120%,
-            #74be63 0 45%,
-            transparent 46%
-        ),
-        radial-gradient(
-            ellipse at 95% 130%,
-            #8ad875 0 48%,
-            transparent 49%
-        ),
-        linear-gradient(
-            #8cd870,
-            #7ec95d
-        );
-
-    z-index: -1;
-}
-
-/* Wolken */
+/* Himmel */
 
 .clouds {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: -2;
     pointer-events: none;
 }
 
 .cloud {
     position: absolute;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.9);
     border-radius: 999px;
 }
 
@@ -140,15 +75,15 @@ body::after {
 .cloud2 {
     width: 240px;
     height: 70px;
-    top: 160px;
+    top: 140px;
     right: 10%;
 }
 
 .cloud2::before {
     width: 90px;
     height: 90px;
-    top: -25px;
-    left: 35px;
+    top: -30px;
+    left: 30px;
 }
 
 .cloud2::after {
@@ -161,7 +96,7 @@ body::after {
 .cloud3 {
     width: 220px;
     height: 65px;
-    top: 100px;
+    top: 90px;
     left: 45%;
 }
 
@@ -179,214 +114,85 @@ body::after {
     right: 30px;
 }
 
+/* Wiese */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 36vh;
+
+    background:
+        radial-gradient(
+            ellipse at 8% 120%,
+            #6ec05b 0 40%,
+            transparent 41%
+        ),
+        radial-gradient(
+            ellipse at 32% 122%,
+            #7ecb67 0 45%,
+            transparent 46%
+        ),
+        radial-gradient(
+            ellipse at 60% 120%,
+            #71c55e 0 42%,
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 92% 125%,
+            #89d874 0 48%,
+            transparent 49%
+        ),
+        linear-gradient(
+            #9cd97c,
+            #74c85a
+        );
+
+    z-index: -1;
+}
+
 /* Blumen */
 
 .meadow {
     position: fixed;
-    bottom: 15px;
     left: 0;
     right: 0;
-    height: 120px;
+    bottom: 0;
 
-    z-index: -1;
+    height: 180px;
+
+    pointer-events: none;
+
+    z-index: 1;
 }
 
 .flower {
     position: absolute;
 
-    font-size: clamp(
-        24px,
-        3vw,
-        40px
+    bottom: 70px;
+
+    font-size: clamp(28px, 3vw, 42px);
+
+    filter: drop-shadow(
+        0 4px 3px rgba(0, 0, 0, .15)
     );
+
+    transform-origin: bottom center;
 
     animation: sway 4s ease-in-out infinite alternate;
+
+    z-index: 2;
 }
 
-.flower:nth-child(1){left:5%}
-.flower:nth-child(2){left:15%}
-.flower:nth-child(3){left:25%}
-.flower:nth-child(4){left:35%}
-.flower:nth-child(5){left:48%}
-.flower:nth-child(6){left:62%}
-.flower:nth-child(7){left:75%}
-.flower:nth-child(8){left:86%}
-.flower:nth-child(9){left:94%}
-
-@keyframes sway {
-    from {
-        transform: rotate(-4deg);
-    }
-
-    to {
-        transform: rotate(4deg);
-    }
-}
-
-/* Inhalt */
-
-.wrap {
-    width: min(
-        920px,
-        calc(100% - 32px)
-    );
-
-    margin: auto;
-    padding: 40px 0;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-.sunflower {
-    font-size: 60px;
-}
-
-h1 {
-    margin: 8px 0;
-}
-
-.subtitle {
-    color: var(--muted);
-}
-
-.card {
-    background: rgba(
-        255,
-        255,
-        255,
-        0.92
-    );
-
-    backdrop-filter: blur(8px);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 18px 55px rgba(
-            0,
-            0,
-            0,
-            0.12
-        );
-}
-
-.balance {
-    padding: 30px;
-    text-align: center;
-}
-
-.label {
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--muted);
-    font-weight: 700;
-}
-
-.amount {
-    font-size: clamp(
-        3rem,
-        10vw,
-        5rem
-    );
-
-    font-weight: 800;
-
-    color: #6a5527;
-
-    margin: 10px 0;
-}
-
-.updated {
-    color: var(--muted);
-}
-
-.section {
-    margin-top: 25px;
-    padding: 25px;
-}
-
-.section-head {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.hint {
-    color: var(--muted);
-}
-
-.transaction {
-    display: grid;
-    grid-template-columns: 50px 1fr auto;
-    gap: 12px;
-
-    align-items: center;
-
-    padding: 14px 0;
-
-    border-bottom: 1px solid #efe8d0;
-}
-
-.transaction:last-child {
-    border: none;
-}
-
-.icon {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    display: grid;
-    place-items: center;
-
-    font-weight: bold;
-}
-
-.in .icon {
-    background: #e6f4e8;
-    color: var(--green);
-}
-
-.out .icon {
-    background: #fde7e3;
-    color: var(--red);
-}
-
-.in .value {
-    color: var(--green);
-}
-
-.out .value {
-    color: var(--red);
-}
-
-.value {
-    font-weight: 700;
-}
-
-.date {
-    font-size: .85rem;
-    color: var(--muted);
-}
-
-footer {
-    text-align: center;
-    margin-top: 25px;
-    color: #7d7d65;
-}
-
-@media (max-width: 600px) {
-
-    .transaction {
-        grid-template-columns: 42px 1fr auto;
-    }
-
-    .section-head {
-        display: block;
-    }
-
-}
+.flower:nth-child(1) { left: 4%; }
+.flower:nth-child(2) { left: 12%; }
+.flower:nth-child(3) { left: 21%; }
+.flower:nth-child(4) { left: 31%; }
+.flower:nth-child(5) { left: 43%; }
+.flower:nth-child(6) { left: 56%; }
+.flower:nth-child(7) { left: 69%; }
+.flower

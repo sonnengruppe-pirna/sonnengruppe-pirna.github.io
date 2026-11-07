@@ -390,6 +390,15 @@ footer {
         display: block;
     }
 
+    .cloud3 {
+        display: none;
+    }
+
+    .cloud1,
+    .cloud2 {
+        transform: scale(0.6);
+    }
+
 }
 
 .sort-toggle {

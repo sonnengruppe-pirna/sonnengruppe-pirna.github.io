@@ -4,6 +4,7 @@ let transactionsData = [];
 async function loadTransactions() {
 
     const response = await fetch("./data/transactions.json");
+    const transactions = await response.json();
     transactionsData = await response.json();
     renderTransactions();
 

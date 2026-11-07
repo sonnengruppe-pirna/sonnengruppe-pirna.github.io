@@ -391,3 +391,13 @@ footer {
     }
 
 }
+
+.sort-toggle {
+    cursor: pointer;
+    user-select: none;
+    transition: color .2s;
+}
+
+.sort-toggle:hover {
+    color: #5ca66a;
+}

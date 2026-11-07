@@ -12,5 +12,12 @@
     "amount": 16.99,
     "date": "10/2026",
     "note": "Tonie 'Herbst- und Laternenlieder' für die Gruppe"
+  },
+  {
+    "id": 3,
+    "type": "out",
+    "amount": 16.99,
+    "date": "10/2026",
+    "note": "Tonie 'Herbst- und Laternenlieder' für die Gruppe"
   }
 ]

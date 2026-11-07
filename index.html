@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruppenkasse Sonnengruppe</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>☀️ Gruppenkasse Sonnengruppe</h1>
+    <p>Gemeinsame Übersicht über Einnahmen und Ausgaben</p>
+</header>
+
+<main>
+
+    <section class="balance-card">
+        <h2>Aktueller Kassenstand</h2>
+        <div id="balance" class="balance">
+            Wird geladen...
+        </div>
+    </section>
+
+    <section class="summary">
+
+        <div class="summary-card income">
+            <h3>Einnahmen</h3>
+            <div id="incomeTotal">0 €</div>
+        </div>
+
+        <div class="summary-card expense">
+            <h3>Ausgaben</h3>
+            <div id="expenseTotal">0 €</div>
+        </div>
+
+    </section>
+
+    <section class="transactions-section">
+
+        <div class="section-header">
+            <h2>Buchungen</h2>
+
+            <button onclick="exportCSV()">
+                CSV herunterladen
+            </button>
+        </div>
+
+        <div id="transactions">
+            Wird geladen...
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Stand wird automatisch aus der Gruppenkasse geladen.
+</footer>
+
+<script src="./js/app.js"></script>
+
+</body>
+</html>

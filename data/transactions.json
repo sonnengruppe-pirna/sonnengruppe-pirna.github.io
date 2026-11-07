@@ -2,15 +2,15 @@
   {
     "id": 1,
     "type": "in",
-    "amount": 120.00,
-    "date": "2026-11-06",
-    "note": "Beitrag Herbstfest"
+    "amount": 140.00,
+    "date": "09/2026",
+    "note": "Ersteinzahlung aller Kinder Sonnengruppe"
   },
   {
     "id": 2,
     "type": "out",
-    "amount": 34.50,
-    "date": "2026-11-03",
-    "note": "Bastelmaterial"
+    "amount": 16,99,
+    "date": "10/2026",
+    "note": "Tonie \"Herbst- und Laternenlieder\" für die Gruppe"
   }
 ]

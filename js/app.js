@@ -6,8 +6,8 @@ function renderTransactions() {
     const data = [...transactionsData];
 
     data.sort((a, b) => {
-        const d1 = new Date(a.date);
-        const d2 = new Date(b.date);
+        const d1 = a.id;
+        const d2 = b.id;
 
         return sortDescending
             ? d2 - d1
@@ -85,7 +85,7 @@ async function loadTransactions() {
 
     container.innerHTML =
         transactionsData
-        .sort((a,b)=>new Date(b.date)-new Date(a.date))
+        .sort((a,b)=>b.id-a.id)
         .map(t => `
             <article class="transaction ${t.type}">
                 <div class="icon">
